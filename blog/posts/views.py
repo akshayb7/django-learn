@@ -14,7 +14,8 @@ def home(request):
     for post in posts:
         html += f"""
         <div>
-            <h1>{post['id']} - {post['title']}</h1>
+            <a href = "/posts/{post['id']}">
+            <h1>{post['id']} - {post['title']}</h1></a>
             <p>{post['content']}</p>
         </div>
         """
