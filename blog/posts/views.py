@@ -19,3 +19,14 @@ def home(request):
         </div>
         """
     return HttpResponse(html)
+
+
+def post(request, id):
+    post = next(post for post in posts if post["id"] == int(id))
+    html = f"""
+        <div>
+            <h1>{post['id']} - {post['title']}</h1>
+            <p>{post['content']}</p>
+        </div>
+    """
+    return HttpResponse(html)
