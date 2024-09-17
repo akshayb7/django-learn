@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 
 posts = [
     {"id": 1, "title": "First Post", "content": "This is the first post"},
@@ -39,3 +39,7 @@ def post(request, id):
         </div>
     """
     return HttpResponse(html)
+
+
+def redirct_post(request, id):
+    return HttpResponseRedirect(f"/posts/{id}/")
