@@ -20,7 +20,7 @@ def home(request):
             <p>{post['content']}</p>
         </div>
         """
-    return HttpResponse(html)
+    return render(request, "home.html")
 
 
 def post(request, id):
