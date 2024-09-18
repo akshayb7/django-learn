@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.urls import reverse
 
 posts = [
     {"id": 1, "title": "First Post", "content": "This is the first post"},
@@ -42,4 +43,5 @@ def post(request, id):
 
 
 def redirct_post(request, id):
-    return HttpResponseRedirect(f"/posts/{id}/")
+    url = reverse("post", args=[id])
+    return HttpResponseRedirect(url)
